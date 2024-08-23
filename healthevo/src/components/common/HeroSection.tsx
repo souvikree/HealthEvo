@@ -1,15 +1,19 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
-import CTAButton from '../ui/CTAButton';
+import { Box, Typography } from '@mui/material';
+import CTAButton from '../ui/CTAButton'; // Make sure this component is defined
 
 const HeroSection: React.FC = () => {
   return (
     <Box
-      className="flex items-center justify-center bg-cover bg-center h-screen"
-      style={{ backgroundImage: `url('/assets/images/healthtech.jp')` }}
+      className="relative flex items-center justify-center h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url('/assets/images/healthtech.jpg')` }}
     >
-      <Box className="text-center text-black">
-        <Typography variant="h2" gutterBottom>
+      {/* Backdrop Layer */}
+      <Box className="absolute inset-0 bg-black opacity-50 z-0" />
+
+      {/* Content */}
+      <Box className="relative z-10 text-center text-white p-6">
+        <Typography variant="h2" gutterBottom className="font-bold">
           Your Personalized Health Companion
         </Typography>
         <Typography variant="h6" gutterBottom>
@@ -22,6 +26,8 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
+
 
 // import React from 'react';
 // import { Box, Typography } from '@mui/material';
