@@ -1,18 +1,21 @@
+// src/components/common/Footer.tsx
 import React from 'react';
-import { Box, Typography, Link } from '@mui/material';
 
 const Footer: React.FC = () => {
   return (
-    <Box component="footer" className="bg-gray-800 text-white p-4">
-      <Typography variant="body2" color="inherit" align="center">
-        © 2024 Intelligent Healthcare Platform. All rights reserved.
-      </Typography>
-      <Box className="flex justify-center mt-2">
-        <Link href="#" color="inherit" className="mx-2">Privacy Policy</Link>
-        <Link href="#" color="inherit" className="mx-2">Terms of Service</Link>
-        <Link href="#" color="inherit" className="mx-2">Contact</Link>
-      </Box>
-    </Box>
+    <footer className="bg-gray-800 py-6 text-white">
+      <div className="container mx-auto text-center">
+        <div className="mb-4">
+          <a href="/about" className="text-white hover:underline">About Us</a> | 
+          <a href="/contact" className="text-white hover:underline"> Contact Us</a> | 
+          <a href="/privacy" className="text-white hover:underline"> Privacy Policy</a> | 
+          <a href="/terms" className="text-white hover:underline"> Terms of Service</a>
+        </div>
+        <div>
+          <p>&copy; {new Date().getFullYear()} HealthEvo</p>
+        </div>
+      </div>
+    </footer>
   );
 };
 

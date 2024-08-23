@@ -3,16 +3,10 @@
 @tailwind utilities;
 
 /* @layer base {
-  :root {
-    --color-primary: #007BFF;
-    --color-secondary: #28A745;
-    --color-accent: #20C997;
-    --color-background: #F8F9FA;
-    --color-text-dark: #343A40;
-    --color-text-light: #E9ECEF;
-  }
+  
 } */
 @layer base {
+    
     .bg-hero-pattern {
       background-image: url('/assets/images/hero-image.jpg');
       background-size: cover;
