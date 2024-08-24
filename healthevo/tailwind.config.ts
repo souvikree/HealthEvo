@@ -23,6 +23,9 @@ const config: Config = {
           light: '#E9ECEF',
         },
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+      },
       
     },
   },

@@ -1,52 +1,42 @@
 // src/components/UserDashboard/NotificationsPanel.tsx
-import React, { useState } from 'react';
-import { Card, CardContent, Typography, IconButton, Menu, MenuItem } from '@mui/material';
-import { Notifications as NotificationsIcon, Close as CloseIcon } from '@mui/icons-material';
+import React from 'react';
+import { Box, List, ListItem, ListItemText, Divider, Typography, Avatar } from '@mui/material';
+import { Notifications as NotificationsIcon } from '@mui/icons-material';
 
 const notifications = [
-  { message: 'Your appointment is confirmed for tomorrow.', date: '2024-08-01' },
-  { message: 'New health recommendations are available.', date: '2024-08-02' },
+  { message: 'Appointment confirmed with Dr. Smith', date: '2024-08-20' },
+  { message: 'New health recommendation available', date: '2024-08-19' },
+  { message: 'Lab results uploaded', date: '2024-08-18' },
+  { message: 'Prescription ready for pickup', date: '2024-08-17' },
+  { message: 'Annual checkup reminder', date: '2024-08-16' },
+  // Add more notifications as needed
 ];
 
 const NotificationsPanel: React.FC = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
-    <Card className="bg-white shadow-md">
-      <CardContent>
-        <Typography variant="h6" className="font-bold">Notifications</Typography>
-        <IconButton onClick={handleClick} color="primary">
+    <Box className="bg-white p-4 rounded-lg shadow-lg" style={{ maxHeight: '290px', overflowY: 'auto' }}>
+      <Box className="flex items-center mb-4">
+        <Avatar className="bg-blue-600 text-white mr-2">
           <NotificationsIcon />
-        </IconButton>
-        <Menu
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          className="w-80"
-        >
-          {notifications.map((notification, index) => (
-            <MenuItem key={index} onClick={handleClose}>
-              <div className="flex justify-between w-full">
-                <span>{notification.message}</span>
-                <span className="text-gray-500 text-sm">{notification.date}</span>
-                <IconButton size="small" onClick={() => console.log('Dismiss')}>
-                  <CloseIcon />
-                </IconButton>
-              </div>
-            </MenuItem>
-          ))}
-        </Menu>
-      </CardContent>
-    </Card>
+        </Avatar>
+        <Typography variant="h6" className="font-bold text-blue-700">Notifications</Typography>
+      </Box>
+      <List>
+        {notifications.map((notification, index) => (
+          <React.Fragment key={index}>
+            <ListItem>
+              <ListItemText
+                primary={notification.message}
+                secondary={notification.date}
+                primaryTypographyProps={{ className: 'text-gray-800 font-semibold' }}
+                secondaryTypographyProps={{ className: 'text-gray-500 text-sm' }}
+              />
+            </ListItem>
+            {index < notifications.length - 1 && <Divider className="my-2" />}
+          </React.Fragment>
+        ))}
+      </List>
+    </Box>
   );
 };
 

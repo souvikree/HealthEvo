@@ -1,7 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserState {
-  testimonials: any;
+  medicalHistory: string;
+  address: string;
+  profilePicture: string;
+  testimonials?: any; // Replace `any` with a more specific type if possible
   name: string;
   email: string;
 }
@@ -9,20 +12,26 @@ interface UserState {
 const initialState: UserState = {
   name: '',
   email: '',
-  testimonials: undefined
+  testimonials: undefined,
+  medicalHistory: '',
+  address: '',
+  profilePicture: ''
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<UserState>) => {
-      state.name = action.payload.name;
-      state.email = action.payload.email;
+    setUser: (state, action: PayloadAction<Partial<UserState>>) => {
+      const { name, email, testimonials } = action.payload;
+      if (name !== undefined) state.name = name;
+      if (email !== undefined) state.email = email;
+      if (testimonials !== undefined) state.testimonials = testimonials;
     },
     clearUser: (state) => {
       state.name = '';
       state.email = '';
+      state.testimonials = undefined;
     },
   },
 });

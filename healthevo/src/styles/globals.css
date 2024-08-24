@@ -21,5 +21,6 @@
   body {
     @apply bg-gray-100 text-gray-900;
     font-family: 'Inter', sans-serif;
+    font-family: theme('fontFamily.sans');
   }
   
