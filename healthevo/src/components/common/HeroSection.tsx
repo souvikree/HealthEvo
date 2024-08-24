@@ -1,7 +1,14 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
+import { useRouter } from 'next/router';
 
 const HeroSection: React.FC = () => {
+  const router = useRouter(); 
+
+  // Function to handle navigation
+  const handleGetStartedClick = () => {
+    router.push('/login'); // Navigate to the /login page
+  };
   return (
     <Box
       className="relative flex items-center justify-center h-screen bg-cover bg-center"
@@ -23,7 +30,8 @@ const HeroSection: React.FC = () => {
             variant="contained"
             color="primary"
             className="bg-blue-600 hover:bg-blue-700"
-            // Add any additional styles or props here
+            onClick={handleGetStartedClick}
+            
           >
             Get Started
           </Button>
@@ -31,7 +39,7 @@ const HeroSection: React.FC = () => {
             variant="outlined"
             color="inherit"
             className="border-white text-white hover:bg-white hover:text-black"
-            // Add any additional styles or props here
+           
           >
             Learn More
           </Button>

@@ -2,7 +2,9 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import Link from 'next/link';
 
+
 const Header: React.FC = () => {
+ 
   return (
     <AppBar
       position="fixed"
@@ -54,12 +56,12 @@ const Header: React.FC = () => {
             </Link>
           </div>
           <div className="flex space-x-4">
-            <Link href="/login" passHref>
+            <Link href="/login" passHref >
               <Button variant="text" color="primary" className="text-gray-700 hover:bg-gray-100">
                 Login
               </Button>
             </Link>
-            <Link href="/signup" passHref>
+            <Link href="/register" passHref >
               <Button variant="contained" color="primary" className="rounded-full">
                 Signup for Free
               </Button>

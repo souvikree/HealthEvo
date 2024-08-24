@@ -17,4 +17,9 @@
       background-image: linear-gradient(to right, #004d40, #00796b);
     }
   }
+
+  body {
+    @apply bg-gray-100 text-gray-900;
+    font-family: 'Inter', sans-serif;
+  }
   

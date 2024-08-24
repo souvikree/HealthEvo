@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <a href="/terms" className="text-white hover:underline"> Terms of Service</a>
         </div>
         <div>
-          <p>&copy; {new Date().getFullYear()} HealthEvo</p>
+          <h2>&copy; {new Date().getFullYear()} HealthEvo</h2>
         </div>
       </div>
     </footer>
