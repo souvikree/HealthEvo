@@ -14,7 +14,9 @@ const Sidebar: React.FC = () => {
     name: 'Jane Doe',
     email: 'Ujy5H@example.com',
     imageUrl: 'https://via.placeholder.com/60',
-  }
+  };
+
+  const isSelected = (path: string) => router.pathname === path;
 
   return (
     <Drawer
@@ -49,7 +51,9 @@ const Sidebar: React.FC = () => {
         <ListItem
           button
           onClick={() => handleClick('/dashboard')}
-          className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
+          className={`transition-colors duration-300 ease-in-out rounded-lg mx-2 ${
+            isSelected('/dashboard') ? 'bg-blue-100' : 'hover:bg-blue-100'
+          }`}
         >
           <ListItemIcon><Dashboard style={{ color: '#007BFF' }} /></ListItemIcon>
           <ListItemText primary="Dashboard" primaryTypographyProps={{ className: 'font-semibold text-gray-900' }} />
@@ -57,7 +61,9 @@ const Sidebar: React.FC = () => {
         <ListItem
           button
           onClick={() => handleClick('/healthrecords')}
-          className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
+          className={`transition-colors duration-300 ease-in-out rounded-lg mx-2 ${
+            isSelected('/healthrecords') ? 'bg-blue-100' : 'hover:bg-blue-100'
+          }`}
         >
           <ListItemIcon><HealthAndSafety style={{ color: '#28A745' }} /></ListItemIcon>
           <ListItemText primary="Health Records" primaryTypographyProps={{ className: 'font-semibold text-gray-900' }} />
@@ -65,7 +71,9 @@ const Sidebar: React.FC = () => {
         <ListItem
           button
           onClick={() => handleClick('/appointments')}
-          className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
+          className={`transition-colors duration-300 ease-in-out rounded-lg mx-2 ${
+            isSelected('/appointments') ? 'bg-blue-100' : 'hover:bg-blue-100'
+          }`}
         >
           <ListItemIcon><CalendarToday style={{ color: '#FFC107' }} /></ListItemIcon>
           <ListItemText primary="Appointments" primaryTypographyProps={{ className: 'font-semibold text-gray-900' }} />
@@ -73,7 +81,9 @@ const Sidebar: React.FC = () => {
         <ListItem
           button
           onClick={() => handleClick('/recommendations')}
-          className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
+          className={`transition-colors duration-300 ease-in-out rounded-lg mx-2 ${
+            isSelected('/recommendations') ? 'bg-blue-100' : 'hover:bg-blue-100'
+          }`}
         >
           <ListItemIcon><Recommend style={{ color: '#DC3545' }} /></ListItemIcon>
           <ListItemText primary="Recommendations" primaryTypographyProps={{ className: 'font-semibold text-gray-900' }} />
@@ -81,7 +91,9 @@ const Sidebar: React.FC = () => {
         <ListItem
           button
           onClick={() => handleClick('/settings')}
-          className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
+          className={`transition-colors duration-300 ease-in-out rounded-lg mx-2 ${
+            isSelected('/settings') ? 'bg-blue-100' : 'hover:bg-blue-100'
+          }`}
         >
           <ListItemIcon><Settings style={{ color: '#6C757D' }} /></ListItemIcon>
           <ListItemText primary="Settings" primaryTypographyProps={{ className: 'font-semibold text-gray-900' }} />

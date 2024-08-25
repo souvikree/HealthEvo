@@ -4,6 +4,9 @@ import authReducer from './slices/authSlice';
 import healthReducer from './slices/healthSlice';
 import appointmentsReducer from './slices/appointmentsSlice';
 import healthRecordsReducer from './slices/healthRecordsSlice';
+import telemedicineReducer from './slices/telemedicineSlice';
+import videoCallReducer from './slices/videoCallSlice';
+import consultationSummaryReducer from './slices/consultationSummarySlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +15,9 @@ export const store = configureStore({
     health: healthReducer,
     appointments: appointmentsReducer,
     healthRecords: healthRecordsReducer,
+    telemedicine: telemedicineReducer,
+    videoCall: videoCallReducer,
+    consultationSummary: consultationSummaryReducer,
   },
 });
 
