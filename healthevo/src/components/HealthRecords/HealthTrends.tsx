@@ -10,6 +10,8 @@ import {
     Title,
     Tooltip,
     Legend,
+    ChartData,
+    ChartOptions,
 } from 'chart.js';
 import { RootState } from '../../redux/store';
 
@@ -26,7 +28,7 @@ const HealthTrends: React.FC = () => {
     };
 
     // Prepare data for the chart based on selected category
-    const chartData = {
+    const chartData: ChartData<'line'> = {
         labels: records.map((record) => record.date),
         datasets: [
             {
@@ -52,17 +54,17 @@ const HealthTrends: React.FC = () => {
     };
 
     // Options for the chart
-    const options = {
+    const options: ChartOptions<'line'> = {
         scales: {
             x: {
-                type: 'category' as const,
+                type: 'category',
                 title: {
                     display: true,
                     text: 'Date',
                     color: '#374151',
                     font: {
                         size: 16,
-                        weight: '500' as const, // Adjust the type here
+                        weight: 500,
                     },
                 },
                 grid: {
@@ -76,7 +78,7 @@ const HealthTrends: React.FC = () => {
                     color: '#374151',
                     font: {
                         size: 16,
-                        weight: '500' as const, // Adjust the type here
+                        weight: 500,
                     },
                 },
                 grid: {
@@ -96,7 +98,7 @@ const HealthTrends: React.FC = () => {
         <div className="p-6 bg-white rounded-lg shadow-md">
             <h2 className="text-3xl font-bold text-gray-800 mb-6">Health Trends</h2>
             <div className="mb-4">
-                <label htmlFor="category" className="block text-lg  font-medium text-gray-700 mb-2">
+                <label htmlFor="category" className="block text-lg font-medium text-gray-700 mb-2">
                     Select a health trend category
                 </label>
                 <select

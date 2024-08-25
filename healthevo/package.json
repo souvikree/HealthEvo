@@ -18,6 +18,8 @@
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.4",
     "chart.js": "^4.4.4",
+    "chartjs-plugin-annotation": "^3.0.1",
+    "chartjs-plugin-zoom": "^2.0.1",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
     "formik": "^2.4.6",
