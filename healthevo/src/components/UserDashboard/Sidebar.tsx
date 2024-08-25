@@ -56,7 +56,7 @@ const Sidebar: React.FC = () => {
         </ListItem>
         <ListItem
           button
-          onClick={() => handleClick('/health-records')}
+          onClick={() => handleClick('/healthrecords')}
           className="hover:bg-blue-100 transition-colors duration-300 ease-in-out rounded-lg mx-2"
         >
           <ListItemIcon><HealthAndSafety style={{ color: '#28A745' }} /></ListItemIcon>
