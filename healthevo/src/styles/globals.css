@@ -23,4 +23,8 @@
     font-family: 'Inter', sans-serif;
     font-family: theme('fontFamily.sans');
   }
+
+  .calendar-event {
+    @apply bg-blue-500 text-white rounded-md px-2 py-1;
+  }
   

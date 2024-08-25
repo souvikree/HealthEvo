@@ -1,11 +1,20 @@
 // src/components/UserDashboard/QuickActions.tsx
 import React from 'react';
 import { Card, CardContent, Button, Typography } from '@mui/material';
+import { useRouter } from 'next/router';
 // import EventIcon from '@mui/icons-material/Event';
 // import VideoCallIcon from '@mui/icons-material/VideoCall';
 // import RecommendationsIcon from '@mui/icons-material/AssignmentTurnedIn'; // Example for recommendations
 
+
 const QuickActions: React.FC = () => {
+  const router = useRouter();
+  const handleClick = () => {
+    // Handle scheduling an appointment
+    console.log('Scheduling an appointment...');
+    router.push('/schedule');
+  
+  }
   return (
     <Card className="bg-gradient-to-r from-blue-50 to-green-50 shadow-lg rounded-lg mt-4">
       <CardContent>
@@ -17,6 +26,7 @@ const QuickActions: React.FC = () => {
             variant="contained"
             color="primary"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md transition-transform transform hover:scale-105"
+            onClick={handleClick}
             
           >
             📅 Schedule an Appointment

@@ -7,7 +7,7 @@ const HeroSection: React.FC = () => {
 
   // Function to handle navigation
   const handleGetStartedClick = () => {
-    router.push('/login'); // Navigate to the /login page
+    router.push('/register'); // Navigate to the /register page
   };
   return (
     <Box
